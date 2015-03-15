@@ -29,7 +29,7 @@
                         lx-dropdown-menu
                             ul
                                 li
-                                    a.dropdown-link
+                                    a(ng-click="showEdit(u)").dropdown-link
                                         i.mdi.mdi-pencil
                                         | &nbsp; แก้ไข
                                 li
@@ -59,11 +59,11 @@ lx-dialog.dialog.dialog--l(onclose="closingModal()")#mdlNew
         div(class="p+")
             form(name="frmNew")
                 lx-text-field(label="ชื่อผู้ใช้งาน")
-                    input(type="tex", ng-model="username", ng-required="true")
+                    input(type="tex", ng-model="username", ng-required="true", ng-disabled="isUpdate")
                 lx-text-field(label="ชื่อ - สกุล")
                     input(type="tex", ng-model="fullname", ng-required="true")
-                lx-text-field(label="รหัสผ่าน")
-                    input(type="password", ng-model="password", ng-required="true")
+                lx-text-field(label="รหัสผ่าน", ng-hide="isUpdate")
+                    input(type="password", ng-model="password")
                 div.switch
                     input(type="checkbox", ng-model="isActive")#isActive.switch__input
                     label(for="isActive").switch__label เปิดการใช้งาน

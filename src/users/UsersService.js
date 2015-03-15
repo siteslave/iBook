@@ -46,6 +46,22 @@ app.factory('UsersService', function ($q) {
                 });
 
             return q.promise;
+        },
+
+        doUpdate: function (fullname, isActive, id) {
+            var q = $q.defer();
+            knex('users')
+                .where('id', id)
+                .update({
+                    fullname: fullname,
+                    is_active: isActive ? 'Y' : 'N'
+                })
+                .exec(function (err) {
+                    if (err) q.reject(err);
+                    else q.resolve();
+                });
+
+            return q.promise;
         }
 
     };
