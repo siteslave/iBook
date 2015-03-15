@@ -1,0 +1,34 @@
+{
+  "name": "iBook",
+  "version": "0.0.1",
+  "description": "document management system",
+  "main": "app/page/Index.html",
+  "window": {
+    "title": "iBook",
+    "width": 1024,
+    "height": 500,
+    "toolbar": true,
+    "frame": true,
+    "position": "center"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "document"
+  ],
+  "author": "Satit Rianpit",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-jade": "^1.0.0",
+    "gulp-jshint": "^1.9.2",
+    "gulp-less": "^3.0.1",
+    "gulp-watch": "^4.1.1"
+  },
+  "dependencies": {
+    "MD5": "^1.2.1",
+    "knex": "^0.7.6",
+    "mysql": "^2.5.5"
+  }
+}

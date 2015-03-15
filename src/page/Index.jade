@@ -1,0 +1,11 @@
+extends ../layouts/Main
+
+block scripts
+    script(src="../main/MainController.js")
+    script(src="../inbox/InboxController.js")
+    script(src="../reports/ReportsController.js")
+    script(src="../users/UsersController.js")
+    script(src="../users/UsersService.js")
+
+block content
+    div(ng-view)

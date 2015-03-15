@@ -1,0 +1,18 @@
+{
+  "name": "iBook",
+  "version": "0.0.1",
+  "authors": [
+    "Satit Rianpit <siteslave@msn.com>"
+  ],
+  "description": "Document management system",
+  "keywords": [
+    "ibook",
+    "document"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular-route": "~1.3.14",
+    "lumx": "~0.3.23"
+  }
+}

@@ -1,0 +1,83 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title iBook
+
+        link(href="../../vendor/lumx/dist/lumx.css", rel="stylesheet")
+        link(href="../css/style.css", rel="stylesheet")
+        link(href="../../vendor/mdi/css/materialdesignicons.css", rel="stylesheet")
+
+    body(ng-app="app")
+        //- toolbar
+        div(flex-container="row")
+            div(flex-item="12")
+                div.toolbar.bgc-indigo-500.tc-white
+                    div.toolbar__left(class="mr+++")
+                        button.btn.btn--l.btn--white.btn--icon(lx-ripple)
+                            i.mdi.mdi-menu
+
+                    span.toolbar__label.fs-title.tc-white iBook
+                    //- Dropdown
+                    div.toolbar__right
+                        lx-dropdown(position="right", from-top)
+                            button.btn.btn--l.btn--white.btn--icon(lx-ripple, lx-dropdown-toggle)
+                                i.mdi.mdi-dots-vertical
+
+                            lx-dropdown-menu
+                                ul
+                                    li
+                                        a.dropdown-link Logout
+
+
+        //- center
+        div(flex-container="row", flex-gutter="24")
+            div(flex-item="3", style="min-height: 450px;").card
+                ul.list(class="mt++")
+                    li.list-row.list-row--has-separator
+                        div.list-row__primary
+                            a(href="#/")
+                                i.icon.icon--l.icon--green.icon--circled.mdi.mdi-home
+                        div.list-row__content
+                            span หน้าหลัก
+                    li.list-row.list-row--has-separator
+                        div.list-row__primary
+                            a(href="#/inbox/3")
+                                i.icon.icon--l.icon--red.icon--circled.mdi.mdi-home
+                        div.list-row__content
+                            span หนังสือเข้า
+                    li.list-row.list-row--has-separator
+                        div.list-row__primary
+                            a(href="#/reports")
+                                i.icon.icon--l.icon--indigo.icon--circled.mdi.mdi-home
+                        div.list-row__content
+                            span รายงาน
+                    li.list-row.list-row--has-separator
+                        div.list-row__primary
+                            a(href="#/users")
+                                i.icon.icon--l.icon--blue.icon--circled.mdi.mdi-account-key
+                        div.list-row__content
+                            span ผู้ใช้งาน
+
+            div(flex-item="9")
+                div.card(class="p+", style="min-height: 450px;")
+                    block content
+
+        //- footer
+        div(flex-container="row")
+            div(flex-item="12")
+                div(class="p+")
+                    | โปรแกรมรับ-ส่ง หนังสือ
+
+        script(src="../../vendor/jquery/dist/jquery.min.js")
+        script(src="../../vendor/velocity/velocity.min.js")
+        script(src="../../vendor/moment/min/moment-with-locales.min.js")
+        script(src="../../vendor/angular/angular.js")
+        script(src="../../vendor/angular-route/angular-route.min.js")
+        script(src="../../vendor/lumx/dist/lumx.min.js")
+
+        script(src="../app.js")
+        // application scripts
+        block scripts
