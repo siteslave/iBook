@@ -9,7 +9,8 @@
     "height": 500,
     "toolbar": true,
     "frame": true,
-    "position": "center"
+    "position": "center",
+    "icon": "icon.png"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

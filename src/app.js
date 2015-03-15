@@ -35,7 +35,7 @@ if (!isReady) {
     jf.writeFileSync(Config.configFile, defaultConfig);
 }
 
-var app = angular.module('app', ['lumx', 'ngRoute']);
+var app = angular.module('app', ['lumx', 'ngRoute', 'highcharts-ng']);
 // routing
 app.config(function ($routeProvider) {
 
@@ -64,8 +64,13 @@ app.config(function ($routeProvider) {
 
 });
 
-app.controller('ToolbarController', function ($scope, $window) {
+app.controller('ToolbarController', function ($scope, $window, LxNotificationService) {
     $scope.fullname = $window.sessionStorage.getItem('fullname');
+
+    //setInterval(function () {
+    //    //LxNotificationService.warning('xxxxxxxxx');
+    //    gui.Window.open('http://google.com',{toolbar:false,frame:false});
+    //}, 5000);
 
     $scope.logout = function () {
         $window.sessionStorage.removeItem('fullname');
@@ -95,3 +100,5 @@ win.on('minimize', function () {
     that.hide();
 
 });
+
+win.maximize();

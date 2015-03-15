@@ -13,7 +13,7 @@ app.controller('LoginController', function ($scope, $window, LoginService, LxNot
 
             }, function (err) {
                 console.log(err);
-            })
+            });
     };
 
 });
