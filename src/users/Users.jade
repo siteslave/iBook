@@ -12,7 +12,7 @@
 
         tbody
             tr(ng-repeat="u in users")
-                td {{ $index+1 }}
+                td {{ u.id }}
                 td {{ u.username }}
                 td {{ u.fullname }}
                 td(ng-if="u.is_active == 'Y'")
@@ -33,7 +33,7 @@
                                         i.mdi.mdi-pencil
                                         | &nbsp; แก้ไข
                                 li
-                                    a.dropdown-link
+                                    a(ng-click="doRemove(u.id)").dropdown-link
                                         i.mdi.mdi-recycle
                                         | &nbsp; ลบ
 br
@@ -45,7 +45,7 @@ div(flex-container="row")
             i.mdi.mdi-plus
 
 //- modal
-lx-dialog.dialog.dialog--l#mdlNew
+lx-dialog.dialog.dialog--l(onclose="closingModal()")#mdlNew
     div.dialog__header
         div.toolbar.bgc-indigo-500(class="pl++")
             span.toolbar__label.tc-white.fs-title
@@ -69,6 +69,6 @@ lx-dialog.dialog.dialog--l#mdlNew
                     label(for="isActive").switch__label เปิดการใช้งาน
 
     div.dialog__actions
-        button.btn.btn--l.btn--green.btn--raised(lx-ripple, ng-disabled="frmNew.$invalid") บันทึก
+        button.btn.btn--l.btn--green.btn--raised(lx-ripple, ng-disabled="frmNew.$invalid", ng-click="save()") บันทึก
         | &nbsp;
         button.btn.btn--red.btn--l.btn--raised(lx-dialog-close, lx-ripple) ปิดหน้าต่าง

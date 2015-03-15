@@ -10,6 +10,8 @@ var knex = require('knex')({
     }
 });
 
+var _ = require('lodash');
+
 var app = angular.module('app', ['lumx', 'ngRoute']);
 // routing
 app.config(function ($routeProvider) {
