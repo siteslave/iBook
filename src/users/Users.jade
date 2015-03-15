@@ -1,3 +1,6 @@
+lx-text-field(label="ค้นหาข้อมูล", fixed-label="true", icon="magnify")
+    input(type="text", ng-model="query")
+
 .data-table-container
     table.data-table.data-table--has-secondary
         thead
@@ -11,14 +14,14 @@
                 td(colspan="5").divider.divider--dark
 
         tbody
-            tr(ng-repeat="u in users")
+            tr(ng-repeat="u in users | filter: query").data-table__clickable-row
                 td {{ u.id }}
                 td {{ u.username }}
                 td {{ u.fullname }}
                 td(ng-if="u.is_active == 'Y'")
-                    i.icon.icon--l.icon--flat.icon--green.mdi.mdi-check
+                    i.icon.icon--s.icon--flat.icon--green.mdi.mdi-check
                 td(ng-if="u.is_active == 'N'")
-                    i.icon.icon--l.icon--flat.icon--red.mdi.mdi-close
+                    i.icon.icon--s.icon--flat.icon--red.mdi.mdi-close
 
                 td
                     //- dropdown

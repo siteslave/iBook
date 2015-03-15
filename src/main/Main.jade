@@ -1,1 +1,12 @@
+
 | Main page
+br
+div(flex-container="row")
+    div(flex-item="12")
+        div#progress
+br
+button.btn.btn--l.btn--green.btn--raised(ng-click="getUser()") Get users
+
+| username: {{ username }}
+br
+img(ng-src="{{img}}")

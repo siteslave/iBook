@@ -1,0 +1,51 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title iBook
+        link(href="../../vendor/lumx/dist/lumx.css", rel="stylesheet")
+        link(href="../css/style.css", rel="stylesheet")
+        link(href="../../vendor/mdi/css/materialdesignicons.css", rel="stylesheet")
+    body(ng-app="app")
+        //- toolbar
+        div(flex-container="row")
+            div(flex-item="12")
+                div.toolbar.bgc-indigo-500.tc-white
+                    div.toolbar__left(class="mr+++")
+                        button.btn.btn--l.btn--white.btn--icon(lx-ripple)
+                            i.mdi.mdi-menu
+                    span.toolbar__label.fs-title.tc-white iBook
+                    //- Dropdown
+                    div.toolbar__right
+                        lx-dropdown(position="right", from-top)
+                            button.btn.btn--l.btn--white.btn--icon(lx-ripple, lx-dropdown-toggle)
+                                i.mdi.mdi-dots-vertical
+                            lx-dropdown-menu
+                                ul
+                                    li
+                                        a(href="../config/Config.html").dropdown-link กำหนดค่าการเชื่อมต่อ
+        //- center
+        div(flex-container="column", flex-align="space-between center", ng-controller="LoginController")
+            div(style="width: 400px;", class="p+").card
+                .fs-headline
+                    i.icon.icon--l.icon--circled.icon--green.mdi.mdi-key
+                    | &nbsp; Please login
+                form(name="frmLogin")
+                    lx-text-field(label="ชื่อผู้ใช้งาน")
+                        input(type="text", ng-model="username", ng-required="true")
+                    lx-text-field(label="รหัสผ่าน")
+                        input(type="password", ng-model="password", ng-required="true")
+                    button.btn.btn--l.btn--green.btn--raised(ng-click="login()") เข้าใช้งาน
+
+    script(src="../../vendor/jquery/dist/jquery.min.js")
+    script(src="../../vendor/velocity/velocity.min.js")
+    script(src="../../vendor/moment/min/moment-with-locales.min.js")
+    script(src="../../vendor/angular/angular.js")
+    script(src="../../vendor/angular-route/angular-route.min.js")
+    script(src="../../vendor/lumx/dist/lumx.min.js")
+    script(src="../app.js")
+    script(src="../Config.js")
+    script(src="LoginController.js")
+    script(src="LoginService.js")

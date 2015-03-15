@@ -1,6 +1,7 @@
-app.factory('UsersService', function ($q) {
+app.factory('UsersService', function ($q, Config) {
 
     var md5 = require('MD5');
+    var knex = Config.getConfig();
 
     return {
 

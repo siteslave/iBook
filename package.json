@@ -2,7 +2,7 @@
   "name": "iBook",
   "version": "0.0.1",
   "description": "document management system",
-  "main": "app/page/Index.html",
+  "main": "app/login/Login.html",
   "window": {
     "title": "iBook",
     "width": 1024,
@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "MD5": "^1.2.1",
+    "jsonfile": "^2.0.0",
     "knex": "^0.7.6",
     "lodash": "^3.5.0",
     "mysql": "^2.5.5"

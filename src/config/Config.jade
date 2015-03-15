@@ -1,0 +1,65 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title iBook
+        link(href="../../vendor/lumx/dist/lumx.css", rel="stylesheet")
+        link(href="../css/style.css", rel="stylesheet")
+        link(href="../../vendor/mdi/css/materialdesignicons.css", rel="stylesheet")
+    body(ng-app="app")
+        //- toolbar
+        div(flex-container="row")
+            div(flex-item="12")
+                div.toolbar.bgc-indigo-500.tc-white
+                    div.toolbar__left(class="mr+++")
+                        button.btn.btn--l.btn--white.btn--icon(lx-ripple)
+                            i.mdi.mdi-menu
+                    span.toolbar__label.fs-title.tc-white iBook
+                    //- Dropdown
+                    div.toolbar__right
+                        lx-dropdown(position="right", from-top)
+                            button.btn.btn--l.btn--white.btn--icon(lx-ripple, lx-dropdown-toggle)
+                                i.mdi.mdi-dots-vertical
+                            lx-dropdown-menu
+                                ul
+                                    li
+                                        a(href="../config/Config.html").dropdown-link กำหนดค่าการเชื่อมต่อ
+        //- center
+        div(flex-container="column", flex-align="space-between center", ng-controller="ConfigController")
+            div(style="width: 600px;", class="p+").card
+                .fs-headline
+                    i.icon.icon--l.icon--circled.icon--green.mdi.mdi-key
+                    | &nbsp; กำหนดค่าการเชื่อมต่อ
+                form(name="frmLogin")
+                    div(flex-container="row", flex-gutter="24")
+                        div(flex-item="6")
+                            lx-text-field(label="ที่อยู่ฐานข้อมูล")
+                                input(type="text", ng-model="config.host", ng-required="true")
+                        div(flex-item="3")
+                            lx-text-field(label="ฐานข้อมูล")
+                                input(type="text", ng-model="config.database", ng-required="true")
+                        div(flex-item="3")
+                            lx-text-field(label="พอร์ท")
+                                input(type="number", ng-model="config.port", ng-required="true")
+                    div(flex-container="row", flex-gutter="24")
+                        div(flex-item="6")
+                            lx-text-field(label="ชื่อผู้ใช้งานฐานข้อมูล")
+                                input(type="text", ng-model="config.user", ng-required="true")
+                        div(flex-item="6")
+                            lx-text-field(label="รหัสผ่าน")
+                                input(type="password", ng-model="config.password", ng-required="true")
+
+                    button.btn.btn--l.btn--green.btn--raised(ng-click="save()") บันทึกข้อมูล
+                    | &nbsp;
+                    a(href="../login/Login.html").btn.btn--l.btn--grey.btn--raised กลับหน้าหลัก
+    script(src="../../vendor/jquery/dist/jquery.min.js")
+    script(src="../../vendor/velocity/velocity.min.js")
+    script(src="../../vendor/moment/min/moment-with-locales.min.js")
+    script(src="../../vendor/angular/angular.js")
+    script(src="../../vendor/angular-route/angular-route.min.js")
+    script(src="../../vendor/lumx/dist/lumx.min.js")
+    script(src="../app.js")
+    script(src="../Config.js")
+    script(src="ConfigController.js")
